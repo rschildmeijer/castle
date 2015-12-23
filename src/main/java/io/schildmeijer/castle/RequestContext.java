@@ -4,9 +4,9 @@ public class RequestContext {
 
   public static class RequestContextBuilder {
 
-    private String cookieId;
-    private String ip;
-    private String headers;
+    private  String cookieId;
+    private  String ip;
+    private  String headers;
 
     public RequestContextBuilder castleCookieId(final String cookieId) {
       this.cookieId = cookieId;
@@ -28,8 +28,14 @@ public class RequestContext {
     }
   }
 
-  public RequestContext(final String cookieId, final String ip, final String headers) {
+  public final String cookieId;
+  public final String ip;
+  public final String headers;
 
+  public RequestContext(final String cookieId, final String ip, final String headers) {
+    this.cookieId = cookieId;
+    this.ip = ip;
+    this.headers = headers;
   }
 
   public static RequestContextBuilder builder() {
